@@ -34,7 +34,12 @@ test("server-renders the finished trashketball experience", async () => {
   assert.match(html, /MAKE WASTE/);
   assert.match(html, /CLOCK IN/);
   assert.match(html, /100 points to transfer/);
-  assert.match(html, /http:\/\/localhost(?::3000)?\/og\.jpg/);
+  assert.match(
+    html,
+    /https:\/\/trashketball-quota-mode\.swthbht\.chatgpt\.site\/og\.jpg/,
+  );
+  assert.match(html, /<style>:root/);
+  assert.doesNotMatch(html, /rel="stylesheet"/);
   assert.doesNotMatch(html, /codex-preview|react-loading-skeleton|Your site is taking shape/i);
 });
 
